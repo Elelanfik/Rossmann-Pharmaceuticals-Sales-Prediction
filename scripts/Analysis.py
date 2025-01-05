@@ -240,3 +240,88 @@ def analyze_promo_effect(df):
     plt.show()
 
     logging.info("Analyzed the effect of promos on sales, customers, and existing customers.")
+
+def analyze_promo_effectiveness(df):
+    """
+    Analyze the effectiveness of promotions and identify stores that benefit most from promotions.
+    Args:
+        df (DataFrame): Dataset with 'Store', 'Sales', 'Promo', 'DayOfWeek', 'Open' columns.
+    """
+    # Filter out stores that are closed (Open == 0)
+    df_open = df[df['Open'] == 1]
+
+    # Group by Store and Promo to calculate the average sales during promo and non-promo periods
+    promo_sales = df_open.groupby(['Store', 'Promo'])['Sales'].mean().unstack().reset_index()
+    promo_sales.columns = ['Store', 'No Promo', 'Promo']
+
+    # Calculate the difference between Promo and No Promo sales for each store
+    promo_sales['Sales Difference'] = promo_sales['Promo'] - promo_sales['No Promo']
+
+    # Visualize the impact of promo on sales by store
+    plt.figure(figsize=(16, 7))  # Increased figure width for better label visibility
+    sns.barplot(data=promo_sales, x='Store', y='Sales Difference', palette='viridis')
+    plt.title("Impact of Promotions on Sales by Store", fontsize=16)
+    plt.xlabel("Store", fontsize=14)
+    plt.ylabel("Sales Difference (Promo - No Promo)", fontsize=14)
+    
+    # Rotate x-axis labels more (90 degrees) to prevent cutting off
+    plt.xticks(rotation=90, ha='center')  
+    plt.tight_layout()  # Adjust layout to ensure everything fits
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.show()
+
+    # Identify stores with the most positive sales difference during promotions
+    best_stores = promo_sales[promo_sales['Sales Difference'] > 0].sort_values(by='Sales Difference', ascending=False)
+
+    return best_stores
+
+
+def analyze_promo_effectiveness(df):
+    """
+    Analyze the effectiveness of promotions and identify stores that benefit most from promotions.
+    Args:
+        df (DataFrame): Dataset with 'Store', 'Sales', 'Promo', 'DayOfWeek', 'Open' columns.
+    """
+    # Filter out stores that are closed (Open == 0)
+    df_open = df[df['Open'] == 1]
+
+    # Group by Store and Promo to calculate the average sales during promo and non-promo periods
+    promo_sales = df_open.groupby(['Store', 'Promo'])['Sales'].mean().unstack().reset_index()
+    promo_sales.columns = ['Store', 'No Promo', 'Promo']
+
+    # Calculate the difference between Promo and No Promo sales for each store
+    promo_sales['Sales Difference'] = promo_sales['Promo'] - promo_sales['No Promo']
+
+    # Visualize the impact of promo on sales by store
+    plt.figure(figsize=(14, 7))
+    sns.barplot(data=promo_sales, x='Store', y='Sales Difference', palette='viridis')
+    plt.title("Impact of Promotions on Sales by Store", fontsize=16)
+    plt.xlabel("Store", fontsize=14)
+    plt.ylabel("Sales Difference (Promo - No Promo)", fontsize=14)
+    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels and set alignment to the right
+    plt.tight_layout()  # Adjust layout to make sure labels fit
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.show()
+
+    # Identify stores with the most positive sales difference during promotions
+    best_stores = promo_sales[promo_sales['Sales Difference'] > 0].sort_values(by='Sales Difference', ascending=False)
+
+    return best_stores
+
+
+def store_type_promo_effectiveness(df):
+    """
+    Visualize the effectiveness of promo by StoreType.
+    Args:
+        df (DataFrame): Dataset to analyze.
+    """
+    plt.figure(figsize=(8, 6))
+    sns.barplot(data=df, x='StoreType', y='Sales', hue='Promo')
+    plt.title("Promo Effectiveness by StoreType", fontsize=16)
+    plt.xlabel("Store Type", fontsize=14)
+    plt.ylabel("Average Sales", fontsize=14)
+    plt.xticks(rotation=45)  # Rotate x-axis labels if needed
+    plt.tight_layout()  # Adjust layout to ensure labels fit
+    plt.show()
+
+    logging.info("Promo effectiveness by StoreType visualized")
