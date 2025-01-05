@@ -325,3 +325,14 @@ def store_type_promo_effectiveness(df):
     plt.show()
 
     logging.info("Promo effectiveness by StoreType visualized")
+def sales_trend_open(df):
+    """
+    Visualize sales trend by store open/close status.
+    Args:
+        df (DataFrame): Dataset to analyze.
+    """
+    plt.figure(figsize=(12, 6))
+    sns.lineplot(data=df, x='DayOfWeek', y='Sales', hue='Open')
+    plt.title("Sales Trend by Day of the Week")
+    plt.show()
+    logging.info("Sales trend by day of the week visualized")

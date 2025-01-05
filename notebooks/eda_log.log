@@ -558,3 +558,56 @@ dtype: int64
 2025-01-05 01:13:47,217 - INFO - Logging setup complete.
 2025-01-05 01:14:58,976 - INFO - Logging setup complete.
 2025-01-05 01:15:46,814 - INFO - Logging setup complete.
+2025-01-05 01:15:57,818 - INFO - Logging setup complete.
+2025-01-05 01:16:04,148 - INFO - Imported required libraries.
+2025-01-05 01:16:09,245 - INFO - Loaded training and test datasets.
+2025-01-05 01:16:09,258 - INFO - Previewed datasets.
+2025-01-05 01:16:22,276 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 01:16:22,276 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 01:16:22,363 - INFO - Filled missing values with 0.
+2025-01-05 01:16:37,598 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:16:37,615 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:19:38,071 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:19:38,094 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:27:11,047 - INFO - Logging setup complete.
+2025-01-05 01:27:20,549 - INFO - Imported required libraries.
+2025-01-05 01:27:23,651 - INFO - Loaded training and test datasets.
+2025-01-05 01:27:23,659 - INFO - Previewed datasets.
+2025-01-05 01:27:48,644 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 01:27:48,644 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 01:27:48,725 - INFO - Filled missing values with 0.
+2025-01-05 01:28:21,609 - INFO - Customer behavior during store opening times visualized.
