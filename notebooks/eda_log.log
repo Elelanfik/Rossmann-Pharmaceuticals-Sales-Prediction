@@ -298,3 +298,5 @@ dtype: int64
 2025-01-04 23:13:34,638 - INFO - Line plot visualized for sales trends across holiday periods.
 2025-01-04 23:13:45,126 - INFO - Histogram visualized for sales distribution by holiday periods.
 2025-01-04 23:13:45,253 - INFO - Generated summary statistics for sales behavior across holiday periods.
+2025-01-04 23:15:33,472 - INFO - Added seasonal labels (Christmas, Easter) to the dataset.
+2025-01-04 23:15:33,988 - INFO - Line chart visualized for sales trends during seasonal periods.

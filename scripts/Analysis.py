@@ -102,7 +102,7 @@ def visualize_holiday_sales_behavior_all(df):
     plt.show()
 
     logging.info("Histogram visualized for sales distribution by holiday periods.")
-    
+
 def sales_holiday_summary(df):
     """
     Generate summary statistics for sales across holiday periods.
@@ -166,3 +166,32 @@ def visualize_seasonal_sales_trends(df):
 
     logging.info("Line chart visualized for sales trends during seasonal periods.")
 
+def analyze_sales_customer_correlation(df):
+    """
+    Calculate and visualize the correlation between sales and number of customers.
+    Args:
+        df (DataFrame): Dataset with 'Sales' and 'Customers' columns.
+    """
+    # Calculate the Pearson correlation coefficient between Sales and Customers
+    correlation = df['Sales'].corr(df['Customers'])
+    
+    # Log the correlation coefficient
+    logging.info(f"Pearson correlation between Sales and Customers: {correlation:.2f}")
+    
+    # Visualize the relationship using a scatter plot
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(data=df, x='Customers', y='Sales', color='b', alpha=0.6)
+    
+    # Add a regression line for better visualization of the relationship
+    sns.regplot(data=df, x='Customers', y='Sales', scatter=False, color='r', line_kws={'linewidth': 2, 'linestyle': '--'})
+    
+    # Title and labels
+    plt.title("Sales vs Number of Customers", fontsize=16)
+    plt.xlabel("Number of Customers", fontsize=14)
+    plt.ylabel("Sales", fontsize=14)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.show()
+
+    logging.info("Scatter plot visualized showing the correlation between Sales and Customers.")
+
+    return correlation
