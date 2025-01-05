@@ -838,3 +838,32 @@ dtype: int64
 2025-01-05 02:49:21,527 - INFO - Filled missing values with 0.
 2025-01-05 02:50:12,798 - INFO - Weekend sales comparison visualized
 2025-01-05 02:50:25,388 - INFO - Assortment type effect on sales visualized
+2025-01-05 02:59:08,982 - INFO - Logging setup complete.
+2025-01-05 02:59:14,781 - INFO - Imported required libraries.
+2025-01-05 02:59:17,457 - INFO - Loaded training and test datasets.
+2025-01-05 02:59:17,465 - INFO - Previewed datasets.
+2025-01-05 02:59:26,797 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 02:59:26,798 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 02:59:26,853 - INFO - Filled missing values with 0.
+2025-01-05 03:00:02,094 - INFO - Sales distribution by assortment type visualized as a pie chart
+2025-01-05 03:31:43,690 - INFO - Competitor distance effect on sales visualized
+2025-01-05 03:35:08,790 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 03:35:09,192 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 03:36:06,809 - INFO - Sales trend with new and old competitors visualized
