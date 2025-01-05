@@ -195,3 +195,48 @@ def analyze_sales_customer_correlation(df):
     logging.info("Scatter plot visualized showing the correlation between Sales and Customers.")
 
     return correlation
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+
+# Function to analyze the effect of promos on sales
+def analyze_promo_effect(df):
+    """
+    Analyze the effect of promos on sales, customer count, and existing customers.
+    Args:
+        df (DataFrame): Dataset with 'Sales', 'Customers', and 'Promo' columns.
+    """
+    # Classify periods as Promo or No Promo
+    df['PromoPeriod'] = df['Promo'].apply(lambda x: 'Promo' if x == 1 else 'No Promo')
+    
+    # Sales comparison between promo and non-promo periods (using bar plot)
+    sales_avg = df.groupby('PromoPeriod')['Sales'].mean()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=sales_avg.index, y=sales_avg.values, palette='Set2')
+    plt.title("Average Sales Comparison: Promo vs No Promo", fontsize=16)
+    plt.xlabel("Promo Period", fontsize=14)
+    plt.ylabel("Average Sales", fontsize=14)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.show()
+
+    # Compare number of customers during promo and non-promo periods (using bar plot)
+    customers_avg = df.groupby('PromoPeriod')['Customers'].mean()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=customers_avg.index, y=customers_avg.values, palette='Set2')
+    plt.title("Average Customer Comparison: Promo vs No Promo", fontsize=16)
+    plt.xlabel("Promo Period", fontsize=14)
+    plt.ylabel("Average Customers", fontsize=14)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.show()
+
+    # Check sales per customer during promo periods (using bar plot)
+    df['SalesPerCustomer'] = df['Sales'] / df['Customers']
+    sales_per_customer_avg = df.groupby('PromoPeriod')['SalesPerCustomer'].mean()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=sales_per_customer_avg.index, y=sales_per_customer_avg.values, palette='Set2')
+    plt.title("Average Sales Per Customer Comparison: Promo vs No Promo", fontsize=16)
+    plt.xlabel("Promo Period", fontsize=14)
+    plt.ylabel("Average Sales Per Customer", fontsize=14)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.show()
+
+    logging.info("Analyzed the effect of promos on sales, customers, and existing customers.")

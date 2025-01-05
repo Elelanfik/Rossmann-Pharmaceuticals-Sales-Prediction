@@ -300,3 +300,69 @@ dtype: int64
 2025-01-04 23:13:45,253 - INFO - Generated summary statistics for sales behavior across holiday periods.
 2025-01-04 23:15:33,472 - INFO - Added seasonal labels (Christmas, Easter) to the dataset.
 2025-01-04 23:15:33,988 - INFO - Line chart visualized for sales trends during seasonal periods.
+2025-01-05 00:08:41,080 - INFO - Logging setup complete.
+2025-01-05 00:08:41,964 - INFO - Imported required libraries.
+2025-01-05 00:08:42,492 - INFO - Loaded training and test datasets.
+2025-01-05 00:08:42,497 - INFO - Previewed datasets.
+2025-01-05 00:08:42,873 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 00:08:42,874 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 00:08:42,934 - INFO - Filled missing values with 0.
+2025-01-05 00:08:43,560 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 00:08:44,112 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 00:08:44,608 - INFO - Visualized promo distribution in Training data with improved styling.
+2025-01-05 00:08:44,646 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 00:08:44,677 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 00:08:44,795 - INFO - Visualized promo distribution in Test data with improved styling.
+2025-01-05 00:09:58,274 - INFO - Classified holiday periods as Before, During, and After holidays.
+2025-01-05 00:09:59,490 - INFO - Boxplot visualized for sales behavior across holiday periods.
+2025-01-05 00:10:04,573 - INFO - Violin plot visualized for sales behavior across holiday periods.
+2025-01-05 00:10:04,755 - INFO - Bar plot visualized for average sales across holiday periods.
+2025-01-05 00:10:07,282 - INFO - Line plot visualized for sales trends across holiday periods.
+2025-01-05 00:10:17,428 - INFO - Histogram visualized for sales distribution by holiday periods.
+2025-01-05 00:10:17,534 - INFO - Generated summary statistics for sales behavior across holiday periods.
+2025-01-05 00:10:17,677 - INFO - Added seasonal labels (Christmas, Easter) to the dataset.
+2025-01-05 00:10:18,155 - INFO - Line chart visualized for sales trends during seasonal periods.
+2025-01-05 00:10:18,196 - INFO - Pearson correlation between Sales and Customers: 0.89
+2025-01-05 00:11:39,876 - INFO - Scatter plot visualized showing the correlation between Sales and Customers.
+2025-01-05 00:20:59,311 - INFO - Logging setup complete.
+2025-01-05 00:21:05,481 - INFO - Imported required libraries.
+2025-01-05 00:21:09,068 - INFO - Loaded training and test datasets.
+2025-01-05 00:21:09,074 - INFO - Previewed datasets.
+2025-01-05 00:21:22,646 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 00:21:22,647 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 00:21:22,702 - INFO - Filled missing values with 0.
+2025-01-05 00:21:37,724 - INFO - Analyzed the effect of promos on sales, customers, and existing customers.
