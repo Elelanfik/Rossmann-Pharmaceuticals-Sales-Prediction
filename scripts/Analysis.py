@@ -3,6 +3,9 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import logging
+from scipy import stats
+from sklearn.preprocessing import LabelEncoder
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -343,17 +346,107 @@ def weekend_sales_comparison(df):
     Args:
         df (DataFrame): Dataset to analyze.
     """
+    # Find stores that are open all weekdays (i.e., open every day of the week)
     stores_open_all_weekdays = df[df['Open'] == 1].groupby('Store')['DayOfWeek'].nunique()
     weekday_open_stores = stores_open_all_weekdays[stores_open_all_weekdays == 7].index
 
+    # Calculate average weekend sales (DayOfWeek >= 5)
     weekend_sales = df[df['DayOfWeek'] >= 5].groupby('Store')['Sales'].mean()
-    open_weekend_sales = weekend_sales[weekend_sales.index.isin(weekday_open_stores)]
-    non_open_weekend_sales = weekend_sales[~weekend_sales.index.isin(weekday_open_stores)]
 
-    plt.figure(figsize=(10, 5))
-    sns.boxplot(data=[open_weekend_sales, non_open_weekend_sales], notch=True)
-    plt.title("Sales on Weekends: Stores Open All Week vs Not Open All Week")
-    plt.xticks([0, 1], ['Open All Week', 'Not Open All Week'])
-    plt.ylabel("Average Sales")
+    # Separate the weekend sales into stores that are open all week and those that are not
+    open_weekend_sales = weekend_sales[weekend_sales.index.isin(weekday_open_stores)].mean()
+    non_open_weekend_sales = weekend_sales[~weekend_sales.index.isin(weekday_open_stores)].mean()
+
+    # Prepare data for bar plot
+    sales_data = {
+        'Store Status': ['Open All Week', 'Not Open All Week'],
+        'Average Weekend Sales': [open_weekend_sales, non_open_weekend_sales]
+    }
+    sales_df = pd.DataFrame(sales_data)
+
+    # Create a bar plot for weekend sales comparison
+    plt.figure(figsize=(8, 6))
+    sns.barplot(data=sales_df, x='Store Status', y='Average Weekend Sales', palette='coolwarm')
+    plt.title("Average Weekend Sales: Stores Open All Week vs Not Open All Week", fontsize=16)
+    plt.xlabel("Store Status", fontsize=14)
+    plt.ylabel("Average Weekend Sales", fontsize=14)
+    plt.tight_layout()  # Adjust layout to make sure labels fit
     plt.show()
+
     logging.info("Weekend sales comparison visualized")
+
+def assortment_sales_effect(df):
+    """
+    Visualize sales by assortment type using a pie chart.
+    Args:
+        df (DataFrame): Dataset to analyze.
+    """
+    if 'Assortment' in df.columns:
+        # Calculate total sales for each assortment type
+        assortment_sales = df.groupby('Assortment')['Sales'].sum()
+
+        # Create a pie chart
+        plt.figure(figsize=(8, 8))
+        plt.pie(assortment_sales, labels=assortment_sales.index, autopct='%1.1f%%', colors=sns.color_palette('Set2', len(assortment_sales)))
+        plt.title("Sales Distribution by Assortment Type", fontsize=16)
+        plt.ylabel("")  # Remove y-axis label as it's not needed for a pie chart
+        plt.tight_layout()  # Adjust layout to make sure everything fits
+        plt.show()
+
+        logging.info("Sales distribution by assortment type visualized as a pie chart")
+    else:
+        logging.warning("Assortment column not found in the dataset.")
+
+        
+def competitor_distance_effect(df):
+    """
+    Visualize the effect of competitor distance on sales.
+    Args:
+        df (DataFrame): Dataset to analyze.
+    """
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(data=df, x='CompetitionDistance', y='Sales')
+    plt.title("Sales vs Competitor Distance")
+    plt.show()
+    logging.info("Competitor distance effect on sales visualized")
+
+def sales_competition_trend(df):
+    """
+    Visualize sales trends with respect to new and old competitors.
+    Args:
+        df (DataFrame): The dataset.
+    """
+    df['CompetitionOpened'] = np.where(df['CompetitionDistance'].isna(), 'No Competitor', 'Old Competitor')
+    df['CompetitionOpened'] = np.where(df['CompetitionDistance'].notna() & df['CompetitionDistance'].shift(1).isna(), 'New Competitor', df['CompetitionOpened'])
+
+    plt.figure(figsize=(15, 6))
+    sns.lineplot(data=df, x='Date', y='Sales', hue='CompetitionOpened')
+    plt.title("Sales Trend with New and Old Competitors")
+    plt.show()
+    logging.info("Sales trend with new and old competitors visualized")
+
+### Correlation Heatmap ###
+
+def correlation_heatmap(df):
+    """
+    Creates a correlation heatmap of numerical features in the dataset.
+    Args:
+        df (DataFrame): The dataset.
+    """
+    df.replace('None', np.nan, inplace=True)  # Replace 'None' with NaN
+    df.fillna(0, inplace=True)  # Fill NaN values with 0
+    
+    # Convert categorical columns into numeric
+    label_encoder = LabelEncoder()
+    df['StateHoliday'] = label_encoder.fit_transform(df['StateHoliday'].astype(str))
+    df['StoreType'] = label_encoder.fit_transform(df['StoreType'].astype(str))
+    df['Assortment'] = label_encoder.fit_transform(df['Assortment'].astype(str))
+
+    numeric_df = df.select_dtypes(include=['int64', 'float64'])
+
+    # Generate correlation heatmap
+    plt.figure(figsize=(16, 8))
+    sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm')
+    plt.title('Correlation Heatmap of Numerical Features')
+    plt.show()
+    logging.info("Correlation heatmap visualized")

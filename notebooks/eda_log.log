@@ -665,3 +665,176 @@ dtype: int64
 2025-01-05 01:42:12,786 - INFO - Loaded training and test datasets.
 2025-01-05 01:42:12,797 - INFO - Previewed datasets.
 2025-01-05 01:42:27,658 - INFO - Weekend sales comparison visualized
+2025-01-05 01:49:19,573 - INFO - Logging setup complete.
+2025-01-05 01:49:25,332 - INFO - Imported required libraries.
+2025-01-05 01:49:28,196 - INFO - Loaded training and test datasets.
+2025-01-05 01:49:28,202 - INFO - Previewed datasets.
+2025-01-05 01:49:34,286 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 01:49:34,286 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 01:49:34,373 - INFO - Filled missing values with 0.
+2025-01-05 01:49:47,607 - INFO - Logging setup complete.
+2025-01-05 01:49:47,639 - INFO - Imported required libraries.
+2025-01-05 01:49:48,541 - INFO - Loaded training and test datasets.
+2025-01-05 01:49:48,547 - INFO - Previewed datasets.
+2025-01-05 01:49:49,397 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 01:49:49,397 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 01:49:49,503 - INFO - Filled missing values with 0.
+2025-01-05 01:49:50,957 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:49:51,767 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:49:52,622 - INFO - Visualized promo distribution in Training data with improved styling.
+2025-01-05 01:49:52,719 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:49:52,782 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:49:53,122 - INFO - Visualized promo distribution in Test data with improved styling.
+2025-01-05 01:52:26,772 - INFO - Classified holiday periods as Before, During, and After holidays.
+2025-01-05 01:52:28,872 - INFO - Boxplot visualized for sales behavior across holiday periods.
+2025-01-05 01:52:38,176 - INFO - Violin plot visualized for sales behavior across holiday periods.
+2025-01-05 01:52:38,779 - INFO - Bar plot visualized for average sales across holiday periods.
+2025-01-05 01:52:44,288 - INFO - Line plot visualized for sales trends across holiday periods.
+2025-01-05 01:52:59,850 - INFO - Histogram visualized for sales distribution by holiday periods.
+2025-01-05 01:53:00,010 - INFO - Generated summary statistics for sales behavior across holiday periods.
+2025-01-05 01:53:00,209 - INFO - Added seasonal labels (Christmas, Easter) to the dataset.
+2025-01-05 01:53:00,908 - INFO - Line chart visualized for sales trends during seasonal periods.
+2025-01-05 01:53:00,960 - INFO - Pearson correlation between Sales and Customers: 0.89
+2025-01-05 01:54:57,258 - INFO - Scatter plot visualized showing the correlation between Sales and Customers.
+2025-01-05 01:54:58,347 - INFO - Analyzed the effect of promos on sales, customers, and existing customers.
+2025-01-05 01:54:58,571 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:54:58,588 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-05 01:55:44,177 - INFO - Sales trend by day of the week visualized
+2025-01-05 01:55:44,593 - INFO - Weekend sales comparison visualized
+2025-01-05 02:16:22,334 - INFO - Logging setup complete.
+2025-01-05 02:16:35,728 - INFO - Imported required libraries.
+2025-01-05 02:16:39,896 - INFO - Loaded training and test datasets.
+2025-01-05 02:16:39,902 - INFO - Previewed datasets.
+2025-01-05 02:17:50,074 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 02:17:50,074 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 02:17:50,144 - INFO - Filled missing values with 0.
+2025-01-05 02:31:00,346 - INFO - Logging setup complete.
+2025-01-05 02:31:06,874 - INFO - Imported required libraries.
+2025-01-05 02:31:13,180 - INFO - Loaded training and test datasets.
+2025-01-05 02:31:13,185 - INFO - Previewed datasets.
+2025-01-05 02:31:28,806 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 02:31:28,806 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 02:31:28,890 - INFO - Filled missing values with 0.
+2025-01-05 02:37:05,978 - INFO - Loaded training and test datasets.
+2025-01-05 02:37:05,986 - INFO - Previewed datasets.
+2025-01-05 02:40:44,103 - INFO - Assortment type effect on sales visualized
+2025-01-05 02:46:13,558 - INFO - Logging setup complete.
+2025-01-05 02:46:18,984 - INFO - Imported required libraries.
+2025-01-05 02:46:24,107 - INFO - Loaded training and test datasets.
+2025-01-05 02:46:24,114 - INFO - Previewed datasets.
+2025-01-05 02:46:40,074 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 02:46:40,074 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 02:46:40,132 - INFO - Filled missing values with 0.
+2025-01-05 02:46:55,540 - INFO - Weekend sales comparison visualized
+2025-01-05 02:47:14,754 - INFO - Assortment type effect on sales visualized
+2025-01-05 02:48:43,642 - INFO - Logging setup complete.
+2025-01-05 02:48:48,366 - INFO - Imported required libraries.
+2025-01-05 02:48:52,517 - INFO - Loaded training and test datasets.
+2025-01-05 02:48:52,525 - INFO - Previewed datasets.
+2025-01-05 02:49:21,471 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 02:49:21,471 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 02:49:21,527 - INFO - Filled missing values with 0.
+2025-01-05 02:50:12,798 - INFO - Weekend sales comparison visualized
+2025-01-05 02:50:25,388 - INFO - Assortment type effect on sales visualized
