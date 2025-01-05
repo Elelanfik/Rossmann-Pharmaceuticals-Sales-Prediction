@@ -611,3 +611,57 @@ SchoolHoliday     0
 dtype: int64
 2025-01-05 01:27:48,725 - INFO - Filled missing values with 0.
 2025-01-05 01:28:21,609 - INFO - Customer behavior during store opening times visualized.
+2025-01-05 01:30:12,124 - INFO - Logging setup complete.
+2025-01-05 01:30:18,318 - INFO - Imported required libraries.
+2025-01-05 01:30:22,029 - INFO - Loaded training and test datasets.
+2025-01-05 01:30:22,037 - INFO - Previewed datasets.
+2025-01-05 01:30:32,107 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 01:30:32,107 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 01:30:32,213 - INFO - Filled missing values with 0.
+2025-01-05 01:31:00,225 - INFO - Sales trend by day of the week visualized
+2025-01-05 01:36:46,421 - INFO - Logging setup complete.
+2025-01-05 01:36:55,123 - INFO - Imported required libraries.
+2025-01-05 01:37:00,271 - INFO - Loaded training and test datasets.
+2025-01-05 01:37:00,280 - INFO - Previewed datasets.
+2025-01-05 01:37:18,641 - INFO - Missing values in training data: Store            0
+DayOfWeek        0
+Date             0
+Sales            0
+Customers        0
+Open             0
+Promo            0
+StateHoliday     0
+SchoolHoliday    0
+dtype: int64
+2025-01-05 01:37:18,642 - INFO - Missing values in test data: Id                0
+Store             0
+DayOfWeek         0
+Date              0
+Open             11
+Promo             0
+StateHoliday      0
+SchoolHoliday     0
+dtype: int64
+2025-01-05 01:37:18,730 - INFO - Filled missing values with 0.
+2025-01-05 01:41:56,520 - INFO - Logging setup complete.
+2025-01-05 01:42:06,246 - INFO - Imported required libraries.
+2025-01-05 01:42:12,786 - INFO - Loaded training and test datasets.
+2025-01-05 01:42:12,797 - INFO - Previewed datasets.
+2025-01-05 01:42:27,658 - INFO - Weekend sales comparison visualized

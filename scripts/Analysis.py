@@ -336,3 +336,24 @@ def sales_trend_open(df):
     plt.title("Sales Trend by Day of the Week")
     plt.show()
     logging.info("Sales trend by day of the week visualized")
+
+def weekend_sales_comparison(df):
+    """
+    Compare weekend sales for stores open all week vs not open all week.
+    Args:
+        df (DataFrame): Dataset to analyze.
+    """
+    stores_open_all_weekdays = df[df['Open'] == 1].groupby('Store')['DayOfWeek'].nunique()
+    weekday_open_stores = stores_open_all_weekdays[stores_open_all_weekdays == 7].index
+
+    weekend_sales = df[df['DayOfWeek'] >= 5].groupby('Store')['Sales'].mean()
+    open_weekend_sales = weekend_sales[weekend_sales.index.isin(weekday_open_stores)]
+    non_open_weekend_sales = weekend_sales[~weekend_sales.index.isin(weekday_open_stores)]
+
+    plt.figure(figsize=(10, 5))
+    sns.boxplot(data=[open_weekend_sales, non_open_weekend_sales], notch=True)
+    plt.title("Sales on Weekends: Stores Open All Week vs Not Open All Week")
+    plt.xticks([0, 1], ['Open All Week', 'Not Open All Week'])
+    plt.ylabel("Average Sales")
+    plt.show()
+    logging.info("Weekend sales comparison visualized")
