@@ -1,0 +1,5 @@
+2025-01-11 09:26:46,339 - INFO - Logging setup complete.
+2025-01-11 09:39:43,864 - INFO - Loaded training and test datasets.
+2025-01-11 09:39:43,874 - INFO - Previewed datasets.
+2025-01-12 03:20:43,077 - INFO - Merged datasets and handled missing values.
+2025-01-12 03:22:24,226 - INFO - Extracted date features.
