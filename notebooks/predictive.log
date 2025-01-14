@@ -33,3 +33,9 @@
 2025-01-13 18:03:07,842 - INFO - Missing values handled in the dataset
 2025-01-13 18:03:07,957 - INFO - Outliers handled for Sales using z-scores
 2025-01-13 18:03:07,962 - INFO - Missing values handled in the test dataset
+2025-01-13 18:35:35,688 - INFO - Logging setup complete.
+2025-01-13 18:35:43,913 - INFO - Datasets loaded successfully
+2025-01-13 18:35:44,093 - INFO - Datasets merged successfully
+2025-01-13 18:35:44,176 - INFO - Missing values handled in the dataset
+2025-01-13 18:35:44,328 - INFO - Outliers handled for Sales using z-scores
+2025-01-13 18:35:44,336 - INFO - Missing values handled in the test dataset
