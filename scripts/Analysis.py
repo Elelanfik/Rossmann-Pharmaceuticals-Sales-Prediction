@@ -6,6 +6,20 @@ import logging
 from scipy import stats
 from sklearn.preprocessing import LabelEncoder
 import os
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
+
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+import logging
+import warnings
+from sklearn.metrics import mean_squared_error
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -450,3 +464,62 @@ def correlation_heatmap(df):
     plt.title('Correlation Heatmap of Numerical Features')
     plt.show()
     logging.info("Correlation heatmap visualized")
+
+def create_pipeline(input_cols, num_cols, cat_cols):
+    numeric_transformer = Pipeline(steps=[
+        ('scaler', MinMaxScaler())
+    ])
+    
+    categorical_transformer = Pipeline(steps=[
+        ('onehot', OneHotEncoder(handle_unknown='ignore'))
+    ])
+    
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', numeric_transformer, num_cols),
+            ('cat', categorical_transformer, cat_cols)
+        ]
+    )
+    
+    return Pipeline(steps=[('preprocessor', preprocessor)])
+
+def rmspe(y_true, y_pred):
+    percentage_error = (y_true - y_pred) / y_true
+    percentage_error[y_true == 0] = 0
+    squared_percentage_error = percentage_error ** 2
+    mean_squared_percentage_error = np.mean(squared_percentage_error)
+    return np.sqrt(mean_squared_percentage_error)
+
+from sklearn.metrics import mean_squared_error
+
+def try_model(model, train_inputs, train_targets, val_inputs, val_targets):
+    model.fit(train_inputs, train_targets)
+    train_preds = model.predict(train_inputs)
+    val_preds = model.predict(val_inputs)
+
+    # Removed 'squared=False'
+    train_rmse = mean_squared_error(train_targets, train_preds, squared=False)
+    val_rmse = mean_squared_error(val_targets, val_preds, squared=False)
+
+    train_rmspe = rmspe(train_targets, train_preds)
+    val_rmspe = rmspe(val_targets, val_preds)
+
+    print(f"Train RMSE: {train_rmse}")
+    print(f"Val RMSE: {val_rmse}")
+    print(f"Train RMSPE: {train_rmspe}")
+    print(f"Val RMSPE: {val_rmspe}")
+
+    model.fit(train_inputs, train_targets)
+    train_preds = model.predict(train_inputs)
+    val_preds = model.predict(val_inputs)
+
+    train_rmse = mean_squared_error(train_targets, train_preds, squared=False)
+    val_rmse = mean_squared_error(val_targets, val_preds, squared=False)
+
+    train_rmspe = rmspe(train_targets, train_preds)
+    val_rmspe = rmspe(val_targets, val_preds)
+
+    print(f"Train RMSE: {train_rmse}")
+    print(f"Val RMSE: {val_rmse}")
+    print(f"Train RMSPE: {train_rmspe}")
+    print(f"Val RMSPE: {val_rmspe}")

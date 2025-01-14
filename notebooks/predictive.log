@@ -3,3 +3,33 @@
 2025-01-11 09:39:43,874 - INFO - Previewed datasets.
 2025-01-12 03:20:43,077 - INFO - Merged datasets and handled missing values.
 2025-01-12 03:22:24,226 - INFO - Extracted date features.
+2025-01-12 03:25:11,388 - INFO - Logging setup complete.
+2025-01-12 03:25:25,449 - INFO - Loaded training and test datasets.
+2025-01-12 03:25:25,463 - INFO - Previewed datasets.
+2025-01-12 03:25:33,490 - INFO - Merged datasets and handled missing values.
+2025-01-12 03:25:53,950 - INFO - Extracted date features.
+2025-01-12 03:27:23,769 - INFO - Added custom features.
+2025-01-12 03:36:15,711 - INFO - Scaled numeric features for both train and test datasets.
+2025-01-13 17:23:49,850 - INFO - Logging setup complete.
+2025-01-13 17:24:01,893 - INFO - Datasets loaded successfully
+2025-01-13 17:24:02,205 - INFO - Datasets merged successfully
+2025-01-13 17:25:33,414 - INFO - Datasets loaded successfully
+2025-01-13 17:25:33,654 - INFO - Datasets merged successfully
+2025-01-13 17:31:11,558 - INFO - Logging setup complete.
+2025-01-13 17:32:34,533 - INFO - Datasets loaded successfully
+2025-01-13 17:32:34,700 - INFO - Datasets merged successfully
+2025-01-13 17:32:34,791 - INFO - Missing values handled in the dataset
+2025-01-13 17:32:34,901 - INFO - Outliers handled for Sales using z-scores
+2025-01-13 17:32:34,907 - INFO - Missing values handled in the test dataset
+2025-01-13 17:48:31,672 - INFO - Logging setup complete.
+2025-01-13 17:48:43,299 - INFO - Datasets loaded successfully
+2025-01-13 17:48:43,468 - INFO - Datasets merged successfully
+2025-01-13 17:48:43,549 - INFO - Missing values handled in the dataset
+2025-01-13 17:48:43,658 - INFO - Outliers handled for Sales using z-scores
+2025-01-13 17:48:43,663 - INFO - Missing values handled in the test dataset
+2025-01-13 18:02:55,607 - INFO - Logging setup complete.
+2025-01-13 18:03:07,578 - INFO - Datasets loaded successfully
+2025-01-13 18:03:07,759 - INFO - Datasets merged successfully
+2025-01-13 18:03:07,842 - INFO - Missing values handled in the dataset
+2025-01-13 18:03:07,957 - INFO - Outliers handled for Sales using z-scores
+2025-01-13 18:03:07,962 - INFO - Missing values handled in the test dataset
